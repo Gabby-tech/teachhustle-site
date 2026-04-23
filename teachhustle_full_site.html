@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="TeachHustle – Nigeria's boldest online tech education platform. Learn Web Dev, Digital Marketing, Forex, Crypto & more. Built for hustlers."/>
+<meta property="og:title" content="TeachHustle – Learn. Hustle. Grow."/>
+<meta property="og:description" content="Nigeria's #1 tech education platform. Real courses, real community, real results."/>
+<meta property="og:type" content="website"/>
+<title>TeachHustle – Learn. Hustle. Grow.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#E8A000;
+  --gold-light:#FAC75A;
+  --gold-dark:#B87800;
+  --gold-bg:rgba(232,160,0,0.10);
+  --gold-border:rgba(232,160,0,0.30);
+  --black:#0A0A0A;
+  --black2:#141414;
+  --white:#FFFFFF;
+  --gray:#F5F4F0;
+  --muted:#888;
+  --card-border:rgba(0,0,0,0.07);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--black);background:var(--white);line-height:1.6;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAV ── */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 40px;background:var(--black);
+  position:sticky;top:0;z-index:200;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo svg{width:38px;height:38px;}
+.nav-brand{font-size:18px;font-weight:800;color:var(--gold);letter-spacing:0.3px;}
+.nav-links{display:flex;gap:22px;}
+.nav-links a{color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{
+  background:var(--gold);color:var(--black);border:none;
+  padding:9px 22px;border-radius:7px;font-size:13px;font-weight:700;
+  cursor:pointer;transition:background .2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--gold-light);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
+.mobile-menu{
+  display:none;flex-direction:column;gap:0;
+  background:var(--black2);position:fixed;top:62px;left:0;right:0;z-index:190;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{
+  color:rgba(255,255,255,0.75);font-size:15px;font-weight:500;
+  padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu a:hover{color:var(--gold);}
+.mobile-menu .mob-cta{
+  margin:16px 24px 20px;background:var(--gold);color:var(--black);
+  text-align:center;padding:13px;border-radius:8px;font-weight:700;font-size:15px;
+}
+
+/* ── HERO ── */
+.hero{
+  background:var(--black);color:var(--white);
+  padding:90px 40px 80px;text-align:center;
+}
+.hero-badge{
+  display:inline-block;background:var(--gold-bg);
+  border:1px solid var(--gold-border);color:var(--gold);
+  padding:6px 18px;border-radius:20px;font-size:11px;font-weight:700;
+  margin-bottom:26px;letter-spacing:1.2px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:54px;font-weight:900;line-height:1.08;
+  margin-bottom:18px;max-width:680px;margin-left:auto;margin-right:auto;
+}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero p{
+  font-size:17px;color:rgba(255,255,255,0.60);max-width:500px;
+  margin:0 auto 38px;line-height:1.75;
+}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{
+  background:var(--gold);color:var(--black);border:none;
+  padding:15px 34px;border-radius:8px;font-size:15px;font-weight:800;
+  cursor:pointer;transition:background .2s;
+}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  border:1.5px solid rgba(255,255,255,0.25);
+  padding:15px 34px;border-radius:8px;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  background:var(--gold);padding:22px 40px;
+  display:flex;justify-content:center;gap:56px;flex-wrap:wrap;
+}
+.stat-item{text-align:center;}
+.stat-num{font-size:26px;font-weight:900;color:var(--black);}
+.stat-label{font-size:11px;font-weight:700;color:rgba(0,0,0,0.55);text-transform:uppercase;letter-spacing:.8px;}
+
+/* ── SHARED SECTION STYLES ── */
+section{padding:80px 40px;}
+.inner{max-width:980px;margin:0 auto;}
+.tag{
+  display:inline-block;background:var(--gold-bg);
+  color:var(--gold-dark);border:1px solid var(--gold-border);
+  padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;
+}
+.tag-white{background:rgba(232,160,0,0.15);color:var(--gold);border-color:rgba(232,160,0,0.3);}
+.sec-title{font-size:36px;font-weight:900;line-height:1.15;margin-bottom:12px;}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:500px;}
+.sec-sub-white{color:rgba(255,255,255,0.50);}
+
+/* ── ABOUT ── */
+.about{background:var(--gray);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
+.about-visual{
+  background:var(--black);border-radius:16px;padding:36px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.mv{border-left:3px solid var(--gold);padding-left:16px;}
+.mv-label{font-size:10px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;}
+.mv-text{font-size:14px;color:rgba(255,255,255,0.70);line-height:1.65;}
+
+/* ── AUDIENCE ── */
+.aud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:42px;}
+.aud-card{
+  background:var(--gray);border-radius:13px;padding:26px 20px;
+  border:1px solid var(--card-border);transition:transform .2s,border-color .2s;
+}
+.aud-card:hover{transform:translateY(-4px);border-color:var(--gold);}
+.aud-icon{font-size:26px;margin-bottom:12px;}
+.aud-title{font-size:15px;font-weight:800;margin-bottom:6px;}
+.aud-desc{font-size:13px;color:var(--muted);line-height:1.55;}
+
+/* ── COURSES ── */
+.courses{background:var(--black);color:var(--white);}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-top:42px;}
+.course-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:13px;padding:22px 18px;transition:background .2s,border-color .2s;
+}
+.course-card:hover{background:rgba(232,160,0,0.09);border-color:rgba(232,160,0,0.35);}
+.c-icon{
+  width:40px;height:40px;background:rgba(232,160,0,0.13);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.c-icon svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.c-name{font-size:14px;font-weight:700;margin-bottom:5px;}
+.c-desc{font-size:12px;color:rgba(255,255,255,0.42);line-height:1.55;}
+
+/* ── MONEY ── */
+.money-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:42px;}
+.money-card{
+  border:1.5px solid var(--gold-border);border-radius:14px;padding:30px 24px;
+  position:relative;overflow:hidden;
+}
+.money-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+.money-title{font-size:17px;font-weight:800;margin-bottom:8px;}
+.money-desc{font-size:14px;color:var(--muted);line-height:1.65;}
+
+/* ── PODCAST ── */
+.podcast{background:var(--black);color:var(--white);}
+.podcast-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.pod-visual{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);
+  border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;
+}
+.pod-ep{
+  display:flex;align-items:center;gap:14px;
+  padding:14px;background:rgba(255,255,255,0.05);border-radius:10px;
+  transition:background .2s;
+}
+.pod-ep:hover{background:rgba(232,160,0,0.1);}
+.pod-play{
+  width:36px;height:36px;background:var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.pod-play svg{width:14px;height:14px;fill:var(--black);}
+.pod-info{flex:1;}
+.pod-title{font-size:13px;font-weight:700;margin-bottom:2px;}
+.pod-meta{font-size:11px;color:rgba(255,255,255,0.40);}
+.pod-platforms{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;}
+.plat-badge{
+  background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.65);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;
+}
+
+/* ── KIDS ── */
+.kids{background:var(--gray);}
+.kids-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.kids-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.kids-card{
+  background:var(--white);border-radius:12px;padding:20px 16px;
+  border:1px solid var(--card-border);text-align:center;
+}
+.kids-emoji{font-size:28px;margin-bottom:8px;}
+.kids-label{font-size:13px;font-weight:700;}
+.kids-desc{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4;}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--black);color:var(--white);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:42px;}
+.testi-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:26px 22px;
+}
+.stars{color:var(--gold);font-size:13px;margin-bottom:12px;letter-spacing:2px;}
+.testi-text{font-size:14px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:16px;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;color:var(--black);flex-shrink:0;
+}
+.auth-name{font-size:13px;font-weight:700;}
+.auth-role{font-size:11px;color:rgba(255,255,255,0.38);}
+
+/* ── WHY ── */
+.why{background:var(--gray);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:42px;}
+.why-card{background:var(--white);border-radius:13px;padding:26px 20px;text-align:center;}
+.why-num{font-size:32px;font-weight:900;color:var(--gold);margin-bottom:6px;}
+.why-label{font-size:14px;font-weight:700;margin-bottom:6px;}
+.why-text{font-size:12px;color:var(--muted);line-height:1.55;}
+
+/* ── CTA ── */
+.cta-section{background:var(--gold);text-align:center;padding:80px 40px;}
+.cta-section h2{font-size:40px;font-weight:900;color:var(--black);margin-bottom:12px;}
+.cta-section p{font-size:16px;color:rgba(0,0,0,0.60);margin-bottom:36px;}
+.cta-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.cta-input{
+  padding:15px 20px;border-radius:8px;border:none;font-size:14px;
+  width:290px;outline:none;background:var(--black);color:var(--white);
+  font-family:inherit;
+}
+.cta-input::placeholder{color:rgba(255,255,255,0.35);}
+.btn-black{
+  background:var(--black);color:var(--white);border:none;
+  padding:15px 28px;border-radius:8px;font-size:14px;font-weight:800;
+  cursor:pointer;font-family:inherit;transition:background .2s;
+}
+.btn-black:hover{background:#222;}
+
+/* ── FOOTER ── */
+footer{background:var(--black);padding:40px 40px 28px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:32px;}
+.footer-brand{max-width:280px;}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.footer-logo svg{width:32px;height:32px;}
+.footer-brand-name{font-size:17px;font-weight:800;color:var(--gold);}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.40);line-height:1.6;}
+.footer-links-group{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col h4{font-size:12px;font-weight:700;color:rgba(255,255,255,0.30);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.50);margin-bottom:10px;transition:color .2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.30);}
+.footer-bottom span{color:var(--gold);font-weight:700;}
+.socials{display:flex;gap:12px;}
+.social-btn{
+  width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.45);
+  font-size:13px;transition:all .2s;
+}
+.social-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── MOBILE RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .hamburger{display:flex;}
+
+  .hero{padding:60px 20px 56px;}
+  .hero h1{font-size:34px;}
+  .hero p{font-size:15px;}
+
+  .stats-bar{gap:28px;padding:18px 20px;}
+  .stat-num{font-size:22px;}
+
+  section{padding:56px 20px;}
+  .sec-title{font-size:28px;}
+
+  .about-grid{grid-template-columns:1fr;gap:32px;}
+  .podcast-inner{grid-template-columns:1fr;gap:32px;}
+  .kids-inner{grid-template-columns:1fr;gap:32px;}
+
+  .kids-cards{grid-template-columns:1fr 1fr;}
+
+  .footer-top{flex-direction:column;}
+  .footer-links-group{gap:28px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+
+  .cta-section h2{font-size:28px;}
+  .cta-input{width:100%;max-width:360px;}
+  footer{padding:36px 20px 24px;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:28px;}
+  .btn-gold,.btn-ghost{padding:13px 24px;font-size:14px;}
+  .kids-cards{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!-- TeachHustle Logo SVG (TH monogram matching brand mark) -->
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 5 C6 5 6 5 13 5 C13 5 13 5 13 13 C13 17 10.5 18.5 8 19 L14 19 C17 19 17 22 17 24 C17 33 10 35 6 35 Z" fill="#E8A000"/>
+      <circle cx="11.5" cy="35" r="4" fill="none" stroke="#E8A000" stroke-width="2.5"/>
+      <rect x="21" y="5" width="7" height="30" rx="3.5" fill="#E8A000"/>
+      <rect x="28" y="5" width="7" height="7" rx="3" fill="#E8A000"/>
+    </svg>
+    <span class="nav-brand">TeachHustle</span>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#podcast">Podcast</a>
+    <a href="#kids">Kids</a>
+    <a href="#testimonials">Stories</a>
+  </div>
+  <button class="nav-cta" onclick="document.querySelector('#cta').scrollIntoView({behavior:'smooth'})">Join the Fam</button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#courses" onclick="closeMenu()">Courses</a>
+  <a href="#podcast" onclick="closeMenu()">Podcast</a>
+  <a href="#kids" onclick="closeMenu()">Kids Initiative</a>
+  <a href="#testimonials" onclick="closeMenu()">Success Stories</a>
+  <a class="mob-cta" href="#cta" onclick="closeMenu()">Join the Fam</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Nigeria's #1 Tech Education Platform</div>
+  <h1>Learn the Skills.<br><em>Hustle</em> the Dream.</h1>
+  <p>We bring the Naija flavor to tech education — real courses, real community, real results. No fluff, just skills that pay.</p>
+  <div class="hero-btns">
+    <button class="btn-gold" onclick="document.querySelector('#cta').scrollIntoView({behavior:'smooth'})">Start Learning Today</button>
+    <button class="btn-ghost" onclick="document.querySelector('#courses').scrollIntoView({behavior:'smooth'})">Explore Courses</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">5,000+</div><div class="stat-label">Students</div></div>
+  <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Courses</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Online</div></div>
+  <div class="stat-item"><div class="stat-num">Live</div><div class="stat-label">Q&amp;A Sessions</div></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="inner about-grid">
+    <div>
+      <div class="tag">Who We Are</div>
+      <h2 class="sec-title">We're not your stuffy old classroom</h2>
+      <p class="sec-sub">TeachHustle is Nigeria's boldest online tech education platform — built for hustlers, dreamers, and the next generation of technopreneurs. Real skills. Real community. Real results.</p>
+    </div>
+    <div class="about-visual">
+      <div class="mv">
+        <div class="mv-label">Mission</div>
+        <div class="mv-text">To empower Nigerians with the knowledge and confidence to become tech leaders — and hustle smart for a brighter future.</div>
+      </div>
+      <div class="mv">
+        <div class="mv-label">Vision</div>
+        <div class="mv-text">To be Nigeria's go-to platform for accessible, high-quality online tech education — building a nation of innovators and technopreneurs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <div class="inner">
+    <div class="tag">Who It's For</div>
+    <h2 class="sec-title">Built for every kind of hustler</h2>
+    <p class="sec-sub">Fresh out of school or ready to switch lanes — there's a path here for you.</p>
+    <div class="aud-grid">
+      <div class="aud-card">
+        <div class="aud-icon">🎓</div>
+        <div class="aud-title">Fresh Grads</div>
+        <div class="aud-desc">Bridge the gap between theory and the real tech world. Your journey starts here.</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🔄</div>
+        <div class="aud-title">Career Changers</div>
+        <div class="aud-desc">Pivot into tech with confidence. We'll equip you to land that dream role.</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">💼</div>
+        <div class="aud-title">Side Hustlers</div>
+        <div class="aud-desc">Monetize your passion. Learn the skills that turn your grind into real income.</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-icon">🚀</div>
+        <div class="aud-title">Entrepreneurs</div>
+        <div class="aud-desc">Building your startup? Get the technical edge to navigate the digital world.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+  <div class="inner">
+    <div class="tag tag-white">What You'll Learn</div>
+    <h2 class="sec-title">Skills that actually pay</h2>
+    <p class="sec-sub sec-sub-white">From code to content — master the tools that power the digital economy.</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="c-name">Web Development</div>
+        <div class="c-desc">Build sites from scratch. Become a coding ninja.</div>
+      </div>
+      <div class="course-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="c-name">App Development</div>
+        <div class="c-desc">Turn ideas into game-changing apps. Concept to launch.</div>
+      </div>
+      <div class="course-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="c-name">Data Science</div>
+        <div class="c-desc">Unlock data power. Make decisions that crush competition.</div>
+      </div>
+      <div class="course-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div>
+        <div class="c-name">Digital Marketing</div>
+        <div class="c-desc">Attract customers. Watch your sales skyrocket.</div>
+      </div>
+      <div class="course-card">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 4s-2.5 2.5-5 2.5S12 4 9 4 4 6.5 4 6.5V20s2.5-2.5 5-2.5S14 20 17 20s5-2.5 5-2.5V4z"/></svg></div>
+        <div class="c-name">Social Media Mgmt</div>
+        <div class="c-desc">Build a loyal following. Become a social media sensation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAKE MONEY -->
+<section id="money">
+  <div class="inner">
+    <div class="tag">Make Money Online</div>
+    <h2 class="sec-title">We keep it real about the digital hustle</h2>
+    <p class="sec-sub">Legit, proven ways to build income online — taught the TeachHustle way.</p>
+    <div class="money-grid">
+      <div class="money-card">
+        <div class="money-title">💻 Freelancing</div>
+        <div class="money-desc">Learn in-demand skills and become a sought-after freelancer on Upwork, Fiverr, and beyond. Your skills = your salary.</div>
+      </div>
+      <div class="money-card">
+        <div class="money-title">📈 Forex Trading</div>
+        <div class="money-desc">Understand the FX market, develop real strategies, and grow your wealth responsibly. Trade smart, not hard.</div>
+      </div>
+      <div class="money-card">
+        <div class="money-title">🪙 Cryptocurrency</div>
+        <div class="money-desc">Demystify crypto, invest safely, and explore the real potential of blockchain technology.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="podcast" id="podcast">
+  <div class="inner podcast-inner">
+    <div>
+      <div class="tag tag-white">TeachHustle Podcast</div>
+      <h2 class="sec-title">Real talk. Real moves.</h2>
+      <p class="sec-sub sec-sub-white">Tune in for raw, unfiltered conversations about building tech careers, hustling online, and winning in the Nigerian digital economy.</p>
+      <div class="pod-platforms" style="margin-top:28px;">
+        <div class="plat-badge">🎙 Spotify</div>
+        <div class="plat-badge">🍎 Apple Podcasts</div>
+        <div class="plat-badge">▶ YouTube</div>
+        <div class="plat-badge">☁ Audiomack</div>
+      </div>
+    </div>
+    <div class="pod-visual">
+      <div class="pod-ep">
+        <div class="pod-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="pod-info">
+          <div class="pod-title">How I Made My First ₦500K Online</div>
+          <div class="pod-meta">EP 12 · 42 min</div>
+        </div>
+      </div>
+      <div class="pod-ep">
+        <div class="pod-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="pod-info">
+          <div class="pod-title">Freelancing in Nigeria: The Full Guide</div>
+          <div class="pod-meta">EP 11 · 38 min</div>
+        </div>
+      </div>
+      <div class="pod-ep">
+        <div class="pod-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="pod-info">
+          <div class="pod-title">Forex + Tech: The Ultimate Combo</div>
+          <div class="pod-meta">EP 10 · 55 min</div>
+        </div>
+      </div>
+      <div class="pod-ep">
+        <div class="pod-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="pod-info">
+          <div class="pod-title">From NYSC to Tech Job in 6 Months</div>
+          <div class="pod-meta">EP 9 · 47 min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIDS INITIATIVE -->
+<section class="kids" id="kids">
+  <div class="inner kids-inner">
+    <div class="kids-cards">
+      <div class="kids-card">
+        <div class="kids-emoji">🎨</div>
+        <div class="kids-label">Creative Coding</div>
+        <div class="kids-desc">Games, art & stories through code</div>
+      </div>
+      <div class="kids-card">
+        <div class="kids-emoji">🤖</div>
+        <div class="kids-label">Intro to AI</div>
+        <div class="kids-desc">AI concepts made fun & simple</div>
+      </div>
+      <div class="kids-card">
+        <div class="kids-emoji">🌐</div>
+        <div class="kids-label">Web Basics</div>
+        <div class="kids-desc">Build your first website at any age</div>
+      </div>
+      <div class="kids-card">
+        <div class="kids-emoji">💡</div>
+        <div class="kids-label">Problem Solving</div>
+        <div class="kids-desc">Logic & critical thinking skills</div>
+      </div>
+    </div>
+    <div>
+      <div class="tag">TeachHustle Kids</div>
+      <h2 class="sec-title">The next generation starts now</h2>
+      <p class="sec-sub">The TeachHustle Kids Initiative equips Nigerian children with digital literacy, coding fundamentals, and tech entrepreneurship mindset — building tomorrow's innovators today.</p>
+      <br/>
+      <button class="btn-gold" style="font-size:14px;padding:13px 28px;" onclick="document.querySelector('#cta').scrollIntoView({behavior:'smooth'})">Enroll Your Child</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="inner">
+    <div class="tag tag-white">Success Stories</div>
+    <h2 class="sec-title">The fam is winning</h2>
+    <p class="sec-sub sec-sub-white">Real people. Real results. This is what happens when you decide to hustle smart.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"I landed my first freelance client 3 weeks after finishing the Digital Marketing course. TeachHustle changed my life. The community alone is worth it."</div>
+        <div class="testi-author">
+          <div class="avatar">AO</div>
+          <div><div class="auth-name">Adeola Okonkwo</div><div class="auth-role">Freelance Digital Marketer · Lagos</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"From zero coding knowledge to building my first app in 4 months. The hands-on projects made all the difference. I now work remotely for a UK startup."</div>
+        <div class="testi-author">
+          <div class="avatar">CE</div>
+          <div><div class="auth-name">Chukwuemeka Eze</div><div class="auth-role">Junior App Developer · Enugu</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"The Forex + Tech combo course helped me understand both worlds. I'm now consistently profitable and I have TeachHustle to thank for the discipline."</div>
+        <div class="testi-author">
+          <div class="avatar">FB</div>
+          <div><div class="auth-name">Fatima Bello</div><div class="auth-role">Forex Trader &amp; Content Creator · Abuja</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TEACHHUSTLE -->
+<section class="why" id="why">
+  <div class="inner">
+    <div class="tag">Why TeachHustle</div>
+    <h2 class="sec-title">We go beyond lectures</h2>
+    <p class="sec-sub">Interactive. Community-driven. Always updated. This is next-level learning.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-label">Hands-on Projects</div>
+        <div class="why-text">Build real things. Not just theory — actual work you can show employers.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-label">Live Q&amp;A Sessions</div>
+        <div class="why-text">Get your questions answered in real time by real practitioners.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-label">Community Forum</div>
+        <div class="why-text">Connect with fellow hustlers. Learn from each other. Grow together.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div class="why-label">Always Updated</div>
+        <div class="why-text">Courses stay fresh with the latest trends so you're always ahead of the curve.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="cta">
+  <h2>Join the TeachHustle Fam</h2>
+  <p>Level up your skills. Build your future. The hustle starts now.</p>
+  <div class="cta-form">
+    <input class="cta-input" type="email" placeholder="Enter your email address..."/>
+    <button class="btn-black">Get Started Free</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M6 5 C6 5 6 5 13 5 C13 5 13 5 13 13 C13 17 10.5 18.5 8 19 L14 19 C17 19 17 22 17 24 C17 33 10 35 6 35 Z" fill="#E8A000"/>
+          <circle cx="11.5" cy="35" r="4" fill="none" stroke="#E8A000" stroke-width="2.5"/>
+          <rect x="21" y="5" width="7" height="30" rx="3.5" fill="#E8A000"/>
+          <rect x="28" y="5" width="7" height="7" rx="3" fill="#E8A000"/>
+        </svg>
+        <span class="footer-brand-name">TeachHustle</span>
+      </div>
+      <div class="footer-tagline">Nigeria's boldest tech education platform. Learn the skills. Hustle the dream.</div>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="#courses">All Courses</a>
+        <a href="#money">Make Money Online</a>
+        <a href="#kids">Kids Initiative</a>
+        <a href="#podcast">Podcast</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#testimonials">Success Stories</a>
+        <a href="#cta">Join the Fam</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Telegram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>TeachHustle</span>. All rights reserved. Built for Nigerian hustlers worldwide.</p>
+    <div class="socials">
+      <a class="social-btn" href="#" title="Instagram">IG</a>
+      <a class="social-btn" href="#" title="TikTok">TK</a>
+      <a class="social-btn" href="#" title="Twitter/X">𝕏</a>
+      <a class="social-btn" href="#" title="Telegram">TG</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  var menu=document.getElementById('mobileMenu');
+  var ham=document.querySelector('.hamburger');
+  if(menu.classList.contains('open')&&!menu.contains(e.target)&&!ham.contains(e.target)){
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
