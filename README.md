@@ -4,7 +4,7 @@
 
 TeachHustle was an entrepreneurship-education initiative I founded to help students and young people build practical skills beyond traditional academics — student entrepreneurship programs, campus innovation, startup education, and community building. This repository holds the early single-page website prototype from that exploration.
 
-The initiative is on hold while I focus on [BossFx](https://youtube.com/@officialbossfx), the fintech education platform I currently run. I'm keeping this repo public because it's an honest part of the journey: identify a problem, prototype toward it, and make a deliberate call about where to spend limited founder time.
+The initiative is on hold while I focus on [BossFx](https://bossfxcademy.com), the fintech education platform I currently run. I'm keeping this repo public because it's an honest part of the journey: identify a problem, prototype toward it, and make a deliberate call about where to spend limited founder time.
 
 ## What's here
 
